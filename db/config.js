@@ -1,3 +1,4 @@
+//require('dotenv').config();
 const options = {
     query: (e) => {
       console.log(e.query);
