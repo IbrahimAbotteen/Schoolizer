@@ -13,6 +13,16 @@ studentController.index=(req,res,next)=>{
       .catch(next);
 }
 
+ studentController.show = (req, res, next) => {
+  Students.getById(req.params.id)
+    .then((student) => {
+      res.json({
+        message: 'ok',
+        data: { student },
+      });
+    })
+    .catch(next);
+}; 
 studentController.create=(req,res,next)=>{
   new Students({
     first_name: req.body.first_name,

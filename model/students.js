@@ -16,9 +16,9 @@ class Students{
           .then((students) => students.map((student) => new this(student)));
       }
 
-    static getByID(id){
+    static getById(id){
         return db
-        .oneOrNone('SELECT * FROM students WHERE id=$1',id)
+        .oneOrNone(`SELECT * FROM students WHERE id=$1`,id)
         .then((student) => {
         if (student) return new this(student);
         throw new Error('student not found');
