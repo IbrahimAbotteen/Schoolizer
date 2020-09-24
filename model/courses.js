@@ -37,6 +37,21 @@ class Courses{
           });
       }
 
+      delete(){
+        return db.oneOrNone(`DELETE FROM courses WHERE id = $1`, this.id);
+    }
+
+    update(changes){
+        Object.assign(this,changes);
+        return db.oneOrNone(
+            `UPDATE courses SET
+             course_name = $/course_name/,
+             description = $/description/,
+             teacher_id = $/teacher_id/
+             WHERE id = $/id/
+             RETURNING * `, this )
+             .then((course)=>Object.assign (this,course))          
+        }
 }
 
 module.exports=Courses;

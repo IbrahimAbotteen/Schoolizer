@@ -40,4 +40,33 @@ courseController.show = (req, res, next) => {
     .catch(next);
   }
 
+  courseController.delete = (req, res, next) => {
+    Courses.getById(req.params.id)
+      .then((course) => course.delete())
+      .then(() => {
+        res.json({
+          message: 'course deleted successfully!',
+        });
+      })
+      .catch(next);
+  };
+
+  courseController.update = (req, res, next) => {
+    Courses.getById(req.params.id)
+      .then((course) =>
+        course.update({
+          course_name: req.body.course_name,
+          description: req.body.description,
+          teacher_id: req.body.teacher_id,
+        })
+      )
+      .then((course) => {
+        res.json({
+          message: 'course updated successfully!',
+          data: { course },
+        });
+      })
+      .catch(next);
+  };
+
 module.exports=courseController;
