@@ -1,12 +1,12 @@
 const db =require('../db/config');
 
 class Students{
-    constructor({id,first_name,last_name,grade_level,student_user_id}){
+    constructor({id,first_name,last_name,grade_level,user_id}){
         this.id=id || null;
         this.first_name=first_name;
         this.last_name=last_name;
         this.grade_level=grade_level;
-        this.user_id=user_id;
+        this.user_id=user_id ||null;
 
     }
 
