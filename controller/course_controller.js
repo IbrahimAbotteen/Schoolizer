@@ -24,4 +24,20 @@ courseController.show = (req, res, next) => {
       .catch(next);
   };
 
+  courseController.create=(req,res,next)=>{
+    new Courses({
+      course_name: req.body.course_name,
+      description: req.body.description,
+      teacher_id: req.body.teacher_id
+    })
+    .save()
+    .then((course) => {
+      res.json({
+        message: 'course added successfully!',
+        data: { course},
+      });
+    })
+    .catch(next);
+  }
+
 module.exports=courseController;

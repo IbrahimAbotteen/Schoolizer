@@ -23,6 +23,20 @@ class Courses{
     });
     }
 
+    save() {
+        return db
+          .one(
+            `
+          INSERT INTO courses (course_name,description,teacher_id)
+          VALUES ($/course_name/, $/description/, $/teacher_id/)
+          RETURNING *`,
+            this
+          )
+          .then((course) => {
+            return Object.assign(this, course);
+          });
+      }
+
 }
 
 module.exports=Courses;
