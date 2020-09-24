@@ -13,6 +13,16 @@ class Courses{
           .manyOrNone('SELECT * FROM courses ORDER BY id ASC')
           .then((courses) => courses.map((course) => new this(course)));
       }
+
+    static getById(id){
+    return db
+    .oneOrNone(`SELECT * FROM courses WHERE id=$1`,id)
+    .then((course) => {
+    if (course) return new this(course);
+    throw new Error('course not found');
+    });
+    }
+
 }
 
 module.exports=Courses;

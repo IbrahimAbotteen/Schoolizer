@@ -13,4 +13,15 @@ courseController.index=(req,res,next)=>{
       .catch(next);
 }
 
+courseController.show = (req, res, next) => {
+    Courses.getById(req.params.id)
+      .then((course) => {
+        res.json({
+          message: 'ok',
+          data: { course },
+        });
+      })
+      .catch(next);
+  };
+
 module.exports=courseController;
