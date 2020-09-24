@@ -6,6 +6,7 @@ const session = require('express-session');
 const passport = require('passport');
 
 const studentRouter=require('./routes/studentsRouter');
+const courseRouter=require('./routes/courseRouter');
 const authRoutes = require('./routes/auth-routes');
 const app =express();
 require('dotenv').config();
@@ -37,6 +38,7 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/student',studentRouter);
+app.use('/course',courseRouter)
 
  
  app.use('/api/auth', authRoutes);
