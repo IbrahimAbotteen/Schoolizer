@@ -5,3 +5,6 @@ CREATE TABLE IF NOT EXISTS students (
     grade_level INTEGER not NULL
     
 );
+
+alter table students
+add column student_user_id INTEGER REFERENCES student_user(id);

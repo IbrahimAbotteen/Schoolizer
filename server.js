@@ -5,6 +5,8 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
+const studentRouter=require('./routes/studentsRouter')
+
 const app =express();
 require('dotenv').config();
 
@@ -33,6 +35,8 @@ app.listen(PORT, () => {
 app.get('/',(req,res)=>{
     res.send('hello World')
 })
+
+app.use('/student',studentRouter);
 
 app.use('*', (req, res) => {
     res.status(400).json({
