@@ -9,7 +9,7 @@ class User{
         this.access=access;
       }
 
-      static findByUserName() {
+      static findByUserName(username) {
         return db.oneOrNone(`
           SELECT * FROM users WHERE username = $1
         `, username)
