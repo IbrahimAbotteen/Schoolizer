@@ -5,8 +5,8 @@ const cookieParser = require('cookie-parser');
 const session = require('express-session');
 const passport = require('passport');
 
-const studentRouter=require('./routes/studentsRouter')
-
+const studentRouter=require('./routes/studentsRouter');
+const authRoutes = require('./routes/auth-routes');
 const app =express();
 require('dotenv').config();
 
@@ -37,6 +37,9 @@ app.get('/',(req,res)=>{
 })
 
 app.use('/student',studentRouter);
+
+ 
+ app.use('/api/auth', authRoutes);
 
 app.use('*', (req, res) => {
     res.status(400).json({

@@ -22,7 +22,7 @@ class User{
       save() {
         return db.one(`INSERT INTO users
         (username, email, password_digest,access)
-        VALUES ($/username/, $/email/, $/password_digest/,$/access) RETURNING *`, this)
+        VALUES ($/username/, $/email/, $/password_digest/,$/access/) RETURNING *`, this)
           .then(user => Object.assign(this, user));
       }
     }
