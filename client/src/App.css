@@ -27,3 +27,29 @@ nav {
   border-bottom: 3px solid black;
   text-decoration: none;
 }
+
+.home{
+
+  text-align: center;
+  margin-top: 50px;
+}
+
+.mainPageButtons{
+  text-decoration: none;
+  background-color: gray;
+  color: black;
+}
+
+.teachersList{
+  text-align: center;
+  margin-top: 50px;
+
+}
+
+.teacherName{
+  margin: auto;
+  color: brown;
+  border: 3px solid black;
+  width: 300px;
+  background-color: darkorange;
+}

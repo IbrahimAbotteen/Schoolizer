@@ -6,7 +6,8 @@ const Home=()=>{
         <div className='home'>
             <h1>What would you like to do??</h1>
             <h2>Teacher's Management</h2>
-            <Link to='/teachers'>teachers</Link>
+            <button className='mainPageButtons'><h2><Link to='/teachers'>Teacher's Management</Link></h2></button>
+            
 
         </div>
     )
