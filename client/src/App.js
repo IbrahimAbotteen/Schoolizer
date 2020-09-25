@@ -21,9 +21,16 @@ import TeacherController from './components/Teachers/TeacherController'
             <div>
             <Header/>
             <Route exact path='/' component={Home}/>
+
             <Route exact path="/teachers"
               render={() => <TeacherController currentPage="index" />}
+          />
+
+            <Route exact path="/teachers/:id"
+              render={props =>( <TeacherController currentPage="show" currentId={props.match.params.id}/>)}
             />
+  
+
             </div>
           </Router>
 
