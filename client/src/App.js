@@ -21,7 +21,7 @@ import TeacherController from './components/Teachers/TeacherController'
             <div>
             <Header/>
             <Route exact path='/' component={Home}/>
-            <Route exact path="/teacher"
+            <Route exact path="/teachers"
               render={() => <TeacherController currentPage="index" />}
             />
             </div>
