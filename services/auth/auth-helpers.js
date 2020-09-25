@@ -9,5 +9,5 @@ function comparePass(userPassword, databasePassword) {
   
   module.exports = {
     comparePass,
-    loginRequired,
+   
   }
