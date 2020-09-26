@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {Link,Redirect} from 'react-router-dom'
+import TeacherForm from './TeacherForm';
 import TeacherList from './TeacherList'
 import TeacherSingle from './TeacherSingle';
 
@@ -12,7 +13,10 @@ class TeacherController extends Component{
             dataLoaded:false,
             allTeachers:null,
             currentTeacher:null,
+            fireRedirect: false,
+            redirectPath: null,
         }
+        this.teacherSubmit = this.teacherSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -37,6 +41,29 @@ class TeacherController extends Component{
                 })
             }).catch(err => console.log(err));
         }
+
+        else if(this.state.currentPage==='new'){
+            this.setState({
+                dataLoaded:true,
+            })
+        }
+    }
+
+    teacherSubmit(event,data){
+        event.preventDefault();
+        fetch(`/teacher`,{
+            method: 'POST',
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify(data),
+        }).then(res=>res.json())
+          .then(res=>{
+              this.setState({
+                  fireRedirect:true,
+                  redirectPath:`/teachers/${res.data.teacher.id}`
+              })
+          })
     }
 
     decideWhichToRender(){
@@ -46,6 +73,9 @@ class TeacherController extends Component{
                 break;
             case 'show':
                 return <TeacherSingle teacher={this.state.currentTeacher}/>
+                break;
+            case 'new':
+                return <TeacherForm teacherSubmit={this.teacherSubmit}/>
                 break;
             default:
                 return <Redirect push to='/' />
@@ -61,6 +91,11 @@ class TeacherController extends Component{
                 ? this.decideWhichToRender()
                 :<p>loading......</p>
             }
+            
+            {
+            this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />
+            }
+            
         </div>
         
 

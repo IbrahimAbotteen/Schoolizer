@@ -29,6 +29,12 @@ import TeacherController from './components/Teachers/TeacherController'
             <Route exact path="/teachers/:id"
               render={props =>( <TeacherController currentPage="show" currentId={props.match.params.id}/>)}
             />
+
+            <Route exact path='/newTeacher'
+              render={()=>(<TeacherController currentPage='new'/>)}
+            
+            
+            />
   
 
             </div>
