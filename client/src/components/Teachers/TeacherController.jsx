@@ -30,7 +30,7 @@ class TeacherController extends Component{
                 })
             }).catch(err => console.log(err));
         }
-        else if(this.state.currentPage==='show'){
+        else if(this.state.currentPage==='show' || this.state.currentPage==='edit'){
             fetch(`/teacher/${this.state.currentId}`)
             .then(res=>res.json())
             .then(res=>{
@@ -49,10 +49,10 @@ class TeacherController extends Component{
         }
     }
 
-    teacherSubmit(event,data){
+    teacherSubmit(method,event,data,id){
         event.preventDefault();
-        fetch(`/teacher`,{
-            method: 'POST',
+        fetch(`/teacher/${id ||''}`,{
+            method: method,
             headers:{
                 'Content-Type':'application/json',
             },
@@ -66,18 +66,34 @@ class TeacherController extends Component{
           })
     }
 
+    teacherDelete(id){
+        fetch(`/teacher/${id}`,{
+            method: 'DELETE',
+        }).then(res => res.json())
+        .then(res => {
+          console.log(res);
+          this.setState({
+            fireRedirect: true,
+            redirectPath: '/teachers',
+          });
+        }).catch(err => console.log(err));
+    }
+
     decideWhichToRender(){
         switch(this.state.currentPage){
             case 'index':
                 return <TeacherList allTeachers={this.state.allTeachers}/>
                 break;
             case 'show':
-                return <TeacherSingle teacher={this.state.currentTeacher}/>
+                return <TeacherSingle teacher={this.state.currentTeacher} teacherDelete={this.teacherDelete}/>
                 break;
             case 'new':
-                return <TeacherForm teacherSubmit={this.teacherSubmit}/>
+                return <TeacherForm isAdd={true} teacherSubmit={this.teacherSubmit}/>
                 break;
-            default:
+            case 'edit':
+                return<TeacherForm isAdd={false} teacherSubmit={this.teacherSubmit} teacher={this.state.currentTeacher}/>
+                break;
+            default: 
                 return <Redirect push to='/' />
                 break;
         }

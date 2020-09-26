@@ -5,6 +5,7 @@ import './App.css';
 import Home from './components/Home';
 import Header from './components/Header';
 import TeacherController from './components/Teachers/TeacherController'
+import TeachersHomePage from './components/Teachers/TeachersHomePage'
 
  class App extends Component {
    constructor(){
@@ -22,6 +23,8 @@ import TeacherController from './components/Teachers/TeacherController'
             <Header/>
             <Route exact path='/' component={Home}/>
 
+            <Route exact path='/teachersHomePage' component={TeachersHomePage} />
+
             <Route exact path="/teachers"
               render={() => <TeacherController currentPage="index" />}
           />
@@ -31,11 +34,13 @@ import TeacherController from './components/Teachers/TeacherController'
             />
 
             <Route exact path='/newTeacher'
-              render={()=>(<TeacherController currentPage='new'/>)}
-            
-            
+              render={()=>(<TeacherController currentPage='new'/>)}            
             />
-  
+
+            <Route exact path="/editTeacher/:id"
+              render={props => (<TeacherController
+                currentPage="edit" currentId={props.match.params.id} />)}
+            />
 
             </div>
           </Router>

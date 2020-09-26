@@ -53,3 +53,39 @@ nav {
   width: 300px;
   background-color: darkorange;
 }
+
+.teacherInfoContainer{
+  text-align: center;
+  margin-top: 150px;
+}
+
+ .teacherInfo{
+  margin: auto;
+  color: brown;
+  border: 3px solid black;
+  width: 300px;
+  background-color: darkorange;
+} 
+.click1{
+
+  text-decoration: none;
+  background-color: gray;
+  color: black;
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+
+}
+
+.click2{
+
+  text-decoration: none;
+  background-color: #37666499;
+  color: black;
+  width: 300px;
+  margin: auto;
+  margin-top: 20px;
+  text-align: center;
+
+}
