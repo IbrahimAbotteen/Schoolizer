@@ -16,7 +16,7 @@ class StudentController extends Component{
             fireRedirect: false,
             redirectPath: null,
         }
-        this.studentSubmit = this.studentSubmit.bind(this);
+        //this.studentSubmit = this.studentSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -25,7 +25,7 @@ class StudentController extends Component{
             .then(res=>res.json())
             .then(res=>{
                 this.setState({
-                    allStudents:res.data.studnets,
+                    allStudents:res.data.students,
                     dataLoaded: true,
                 })
             }).catch(err => console.log(err));
@@ -37,9 +37,26 @@ class StudentController extends Component{
             case 'index':
                 return <StudentList allStudents={this.state.allStudents}/>
                 break;
-        }
 
+            default: 
+                return <Redirect push to='/' />
+                break;
+        }}
+
+        render(){
+            return(
+            <div>
+                {
+                    (this.state.dataLoaded)
+                    ? this.decideWhichToRender()
+                    :<p>loading......</p>
+                }
+            </div>
+    
+    
+            )
+        }
     }
-}
+
 
 export default StudentController;

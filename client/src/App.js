@@ -4,9 +4,10 @@ import logo from './logo.svg';
 import './App.css';
 import Home from './components/Home';
 import Header from './components/Header';
-import TeacherController from './components/Teachers/TeacherController'
-import TeachersHomePage from './components/Teachers/TeachersHomePage'
-import StudentController from './components/Students/StudentsHomePage'
+import TeacherController from './components/Teachers/TeacherController';
+import TeachersHomePage from './components/Teachers/TeachersHomePage';
+
+import StudentController from './components/Students/StudentController';
 import StudentsHomePage from './components/Students/StudentsHomePage'
 
  class App extends Component {

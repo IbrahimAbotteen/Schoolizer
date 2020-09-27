@@ -7,4 +7,4 @@ CREATE TABLE IF NOT EXISTS students (
 );
 
 alter table students
-add column student_user_id INTEGER REFERENCES student_user(id);
+add column user_id INTEGER REFERENCES users(id);

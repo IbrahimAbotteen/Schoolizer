@@ -6,6 +6,7 @@ const StudentList=(props)=>{
     return(
         <div>
             {props.allStudents.map(student=>{
+                
                 return <Student key={student.id} student={student} />
             })}
         </div>
