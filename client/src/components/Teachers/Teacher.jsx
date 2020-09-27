@@ -12,8 +12,6 @@ const Teacher=(props)=>{
     </div>
     
    </div>
-   
-
 
     )
 }

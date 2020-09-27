@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import {Link,Redirect} from 'react-router-dom'
+import {Link,Redirect} from 'react-router-dom';
 import TeacherForm from './TeacherForm';
-import TeacherList from './TeacherList'
+import TeacherList from './TeacherList';
 import TeacherSingle from './TeacherSingle';
 
 class TeacherController extends Component{

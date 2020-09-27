@@ -5,9 +5,9 @@ const Header=()=>{
     return(
         <header>
             <nav>
-                <ul className='navBar'>
-                    <h4><Link to='/'>Home</Link></h4>
-                </ul>
+                <h4><Link to='/'>Home</Link></h4>
+                    <h4><Link to='/teachersHomePage'>Teachers</Link></h4>
+                    <h4><Link to='/studentsHomePage'>Students</Link></h4>
             </nav>
         </header>
     )
