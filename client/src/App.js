@@ -8,7 +8,10 @@ import TeacherController from './components/Teachers/TeacherController';
 import TeachersHomePage from './components/Teachers/TeachersHomePage';
 
 import StudentController from './components/Students/StudentController';
-import StudentsHomePage from './components/Students/StudentsHomePage'
+import StudentsHomePage from './components/Students/StudentsHomePage';
+
+import CourseController from './components/Courses/CourseController';
+import CoursesHomePage from './components/Courses/CoursesHomePage';
 
  class App extends Component {
    constructor(){
@@ -65,7 +68,24 @@ import StudentsHomePage from './components/Students/StudentsHomePage'
                 currentPage="edit" currentId={props.match.params.id} />)}
             />
 
+            <Route exact path='/coursesHomePage' component={CoursesHomePage} />
 
+            <Route exact path="/courses"
+              render={() => <CourseController currentPage="index" />}
+            />
+
+            <Route exact path="/courses/:id"
+              render={props =>( <CourseController currentPage="show" currentId={props.match.params.id}/>)}
+            />
+
+            <Route exact path='/newCourse'
+              render={()=>(<CourseController currentPage='new'/>)}            
+            />
+
+            <Route exact path="/editCourse/:id"
+              render={props => (<CourseController
+                currentPage="edit" currentId={props.match.params.id} />)}
+            />
 
             </div>
           </Router>
