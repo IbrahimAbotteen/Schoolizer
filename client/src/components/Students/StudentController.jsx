@@ -16,7 +16,7 @@ class StudentController extends Component{
             fireRedirect: false,
             redirectPath: null,
         }
-        //this.studentSubmit = this.studentSubmit.bind(this);
+        this.studentSubmit = this.studentSubmit.bind(this);
     }
 
     componentDidMount(){
@@ -30,7 +30,7 @@ class StudentController extends Component{
                 })
             }).catch(err => console.log(err));
         }
-        else if (this.state.currentPage==='show'){
+        else if (this.state.currentPage==='show' || this.state.currentPage==='edit'){
             fetch(`/student/${this.state.currentId}`)
             .then(res=>res.json())
             .then(res=>{
@@ -41,6 +41,28 @@ class StudentController extends Component{
                 })
             }).catch(err => console.log(err));
         }
+        else if(this.state.currentPage==='new'){
+            this.setState({
+                dataLoaded:true,
+            })
+        }
+    }
+
+    studentSubmit(method,event,data,id){
+        event.preventDefault();
+        fetch(`/student/${id ||''}`,{
+            method: method,
+            headers:{
+                'Content-Type':'application/json',
+            },
+            body:JSON.stringify(data),
+        }).then(res=>res.json())
+          .then(res=>{
+              this.setState({
+                  fireRedirect:true,
+                  redirectPath:`/students/${res.data.student.id}`
+              })
+          })
     }
 
     decideWhichToRender(){
@@ -50,6 +72,13 @@ class StudentController extends Component{
                 break;
             case 'show':
                 return <StudentSingle student={this.state.currentStudent} />
+                break;
+            case 'new':
+                return <StudentForm isAdd={true} studentSubmit={this.studentSubmit}/>
+                break;
+                break;
+            case 'edit':
+                return<StudentForm isAdd={false} studentSubmit={this.studentSubmit} student={this.state.currentStudent}/>
                 break;
 
             default: 
@@ -65,6 +94,10 @@ class StudentController extends Component{
                     ? this.decideWhichToRender()
                     :<p>loading......</p>
                 }
+
+               {
+                    this.state.fireRedirect && <Redirect push to={this.state.redirectPath} />
+               }
             </div>
     
     
