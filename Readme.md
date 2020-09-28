@@ -1,8 +1,8 @@
 # Schoolizer
 ### A school orginizer web app that makes it easy for you as a manager to control your school by managing your teachers,students and courses taught in the school...
 
-###[Schoolizer on Heroku]()
-###[Schoolizer on Github]()
+### ![Schoolizer on Heroku]()
+### ![Schoolizer on Github]()
 
 ![MainPage](./MainPage.PNG)
 
