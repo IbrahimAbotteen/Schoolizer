@@ -59,13 +59,29 @@ h4 {
 .teacherInfoContainer{
   text-align: center;
   margin-top: 150px;
-  color: brown;
+  color: goldenrod;
+}
+
+.teacherDescription{
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  border: 3px solid black; 
+  background-color: indigo;
 }
 
 .studentInfoContainer{
   text-align: center;
   margin-top: 150px;
-  color: brown;
+  color:  goldenrod;
+}
+
+.studentDescription{
+  text-align: center;
+  width: 500px;
+  margin: auto;
+  border: 3px solid black; 
+  background-color: indigo;
 }
 
 .courseInfoContainer{
