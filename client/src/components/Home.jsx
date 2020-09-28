@@ -7,7 +7,7 @@ const Home=()=>{
             <h1>What would you like to do??</h1>
             <h1 className='homeButtons'><Link to='/teachersHomePage'>Teachers Management</Link></h1>
             <h1 className='homeButtons'><Link to='/studentsHomePage'>Students Management</Link></h1>
-            <h1 className='homeButtons'><Link to='/studentsHomePage'>Courses Management</Link></h1>
+            <h1 className='homeButtons'><Link to='/coursesHomePage'>Courses Management</Link></h1>
             
 
         </div>
