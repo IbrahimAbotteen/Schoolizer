@@ -1,10 +1,10 @@
 # Schoolizer
 ### A school orginizer web app that makes it easy for you as a manager to control your school by managing your teachers,students and courses taught in the school...
 
-[Schoolizer on Heroku]()
-[Schoolizer on Github]()
+###[Schoolizer on Heroku]()
+###[Schoolizer on Github]()
 
-[!MainPage](./MainPage.PNG)
+![MainPage](./MainPage.PNG)
 
 # Who is this app for?
 It is for school managers who are tired  tired of using excel sheets and paperwork to manage thier schools...
@@ -41,6 +41,6 @@ If you don't know the teacher's Id, you can leave it blank..
 [Click Here to see the wireFrames](./Wire_Frames) 
 
 # Schema Diagram
-[!Schema](./schema.PNG)
+![Schema](./schema.PNG)
 
 
