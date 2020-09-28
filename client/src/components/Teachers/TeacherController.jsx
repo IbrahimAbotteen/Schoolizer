@@ -17,6 +17,7 @@ class TeacherController extends Component{
             redirectPath: null,
         }
         this.teacherSubmit = this.teacherSubmit.bind(this);
+        this.teacherDelete = this.teacherDelete.bind(this);
     }
 
     componentDidMount(){

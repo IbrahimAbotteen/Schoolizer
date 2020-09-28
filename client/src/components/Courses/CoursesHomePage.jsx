@@ -8,7 +8,8 @@ const CoursesHomePage=()=>{
             <h3>What would you like to do??</h3>
             <h2 className='click0'><Link to='/courses'>Show Courses</Link></h2>
             <h2 className='click0'><Link to='/newCourse'>Add a Course</Link></h2>
-            <h2 className='click0'><Link to='/courses'>Edit a Course</Link></h2>       
+            <h2 className='click0'><Link to='/courses'>Edit a Course</Link></h2>
+            <h2 className='click0'><Link to='/courses'>Delete a Course</Link></h2>       
         </div>
     )
 }

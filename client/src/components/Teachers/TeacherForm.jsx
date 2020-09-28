@@ -1,4 +1,6 @@
 import React,{Component}from 'react';
+import Teacher from './Teacher'
+import {Link} from 'react-router-dom'
 
 class TeacherForm extends Component{
     constructor(props){
@@ -30,6 +32,7 @@ class TeacherForm extends Component{
                     <input type="text"  name='last_name' placeholder='lastName' value={this.state.last_name} onChange={this.handleInputChange} />
                     <input type="text" name='major' placeholder='major' value={this.state.major} onChange={this.handleInputChange} />
                     <input type="submit" value={this.props.isAdd ? 'ADD' :'UPDATE'} />
+                    <h2 className='click2'><Link to={`/teachersHomePage`}>Back</Link></h2>
                 </form>
             </div>
         )

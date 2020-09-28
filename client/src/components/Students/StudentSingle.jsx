@@ -9,6 +9,7 @@ const StudentSingle=(props)=>{
                 <h1>Student First Name: {props.student.first_name} </h1>
                 <h1>Student's Last Name: {props.student.last_name}</h1>
                 <h1>Grade Level: {props.student.grade_level}</h1>
+                <button className="click1" onClick={() => props.studentDelete(props.student.id)}>Delete</button>
             </div>
 
             <h2 className='click1'><Link to={`/editStudent/${props.student.id}`}>Edit Student</Link></h2>

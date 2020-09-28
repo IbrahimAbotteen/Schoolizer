@@ -17,6 +17,7 @@ class CourseController extends Component{
             redirectPath: null,
         }
         this.courseSubmit = this.courseSubmit.bind(this);
+        this.courseDelete = this.courseDelete.bind(this);
     }
 
     componentDidMount(){
@@ -67,13 +68,25 @@ class CourseController extends Component{
               })
           })
     }
+    courseDelete(id){
+        fetch(`/course/${id}`,{
+            method: 'DELETE',
+        }).then(res => res.json())
+        .then(res => {
+          console.log(res);
+          this.setState({
+            fireRedirect: true,
+            redirectPath: '/courses',
+          });
+        }).catch(err => console.log(err));
+    }
     decideWhichToRender(){
         switch(this.state.currentPage){
             case 'index':
                 return <CourseList allCourses={this.state.allCourses}/>
                 break;
             case 'show':
-                return <CourseSingle course={this.state.currentCourse} />
+                return <CourseSingle course={this.state.currentCourse} courseDelete={this.courseDelete} />
                 break;
             case 'new':
                 return <CourseForm isAdd={true} courseSubmit={this.courseSubmit}/>

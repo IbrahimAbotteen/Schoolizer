@@ -7,6 +7,7 @@ const CourseSingle=(props)=>{
             <div className='courseDescription'>            
                 <h1>Course Name: {props.course.course_name} </h1>
                 <h1>Description: {props.course.description}</h1>
+                <button className="click1" onClick={() => props.courseDelete(props.course.id)}>Delete</button>
             </div>
 
             <h2 className='click1'><Link to={`/editCourse/${props.course.id}`}>Edit Course</Link></h2>

@@ -9,7 +9,7 @@ const TeachersHomePage=()=>{
             <h2 className='click0'><Link to='/teachers'>Show Teachers</Link></h2>
             <h2 className='click0'><Link to='/newTeacher'>Add a Teacher</Link></h2>
             <h2 className='click0'><Link to='/teachers'>Edit a Teacher</Link></h2>
-            {/* <h2 className='click1'><Link to='/teachers'>Delete a Teacher</Link></h2> */}
+            <h2 className='click0'><Link to='/teachers'>Delete a Teacher</Link></h2> 
             
         </div>
     )

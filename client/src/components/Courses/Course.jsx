@@ -8,6 +8,8 @@ const Course=(props)=>{
         <h2> Course Name: {props.course.course_name}</h2>   
         <h2 className='click1'><Link to={`/courses/${props.course.id}`}>More Info</Link></h2>
         <h2 className='click2'><Link to={`/editCourse/${props.course.id}`}>Edit this course</Link></h2>
+        <h2 className='click1'><Link to={`/courses/${props.course.id}`}>Delete this course</Link></h2>
+        <h2 className='click2'><Link to={`/coursesHomePage`}>Back</Link></h2> 
     </div>
     
    </div>

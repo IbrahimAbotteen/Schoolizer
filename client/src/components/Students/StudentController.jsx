@@ -17,6 +17,7 @@ class StudentController extends Component{
             redirectPath: null,
         }
         this.studentSubmit = this.studentSubmit.bind(this);
+        this.studentDelete = this.studentDelete.bind(this);
     }
 
     componentDidMount(){
@@ -65,13 +66,26 @@ class StudentController extends Component{
           })
     }
 
+    studentDelete(id){
+        fetch(`/student/${id}`,{
+            method: 'DELETE',
+        }).then(res => res.json())
+        .then(res => {
+          console.log(res);
+          this.setState({
+            fireRedirect: true,
+            redirectPath: '/students',
+          });
+        }).catch(err => console.log(err));
+    }
+
     decideWhichToRender(){
         switch(this.state.currentPage){
             case 'index':
                 return <StudentList allStudents={this.state.allStudents}/>
                 break;
             case 'show':
-                return <StudentSingle student={this.state.currentStudent} />
+                return <StudentSingle student={this.state.currentStudent} studentDelete={this.studentDelete}/>
                 break;
             case 'new':
                 return <StudentForm isAdd={true} studentSubmit={this.studentSubmit}/>
