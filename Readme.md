@@ -1,16 +1,20 @@
 # Schoolizer
 ### A school orginizer web app that makes it easy for you as a manager to control your school by managing your teachers,students and courses taught in the school...
 
+<<<<<<< HEAD
 [Schoolizer on Heroku](https://stark-fjord-48873.herokuapp.com/)
 [Schoolizer on Github](https://github.com/IbrahimAbotteen/Schoolizer)
+=======
+### [Schoolizer on Heroku](https://stark-fjord-48873.herokuapp.com/)
+### [Schoolizer on Github](https://github.com/IbrahimAbotteen/Schoolizer)
+>>>>>>> 7627d0147dc69efc8367a20af3155969f7332d16
 
-[!MainPage](./MainPage.PNG)
+![MainPage](./MainPage.PNG)
 
 # Who is this app for?
 It is for school managers who are tired  tired of using excel sheets and paperwork to manage thier schools...
 # How to install it ??
-You can visit this site to open the app 
-[Schoolizer App ]()
+You can visit this site to open the app [Schoolizer App ](https://stark-fjord-48873.herokuapp.com/)
 # How to use it?
  In very easy and simple steps you can build your own school by just choosing the feature you need (student/teacher/courses)...
  Then you can choose one of the operations listed in each feature(show,add, edit)...
@@ -41,6 +45,6 @@ If you don't know the teacher's Id, you can leave it blank..
 [Click Here to see the wireFrames](./Wire_Frames) 
 
 # Schema Diagram
-[!Schema](./schema.PNG)
+![Schema](./schema.PNG)
 
 
