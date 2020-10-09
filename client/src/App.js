@@ -24,7 +24,7 @@ import CoursesHomePage from './components/Courses/CoursesHomePage';
 
   render(){
       return (
-        
+
           <Router>
             <div>
             <Header/>
@@ -87,7 +87,9 @@ import CoursesHomePage from './components/Courses/CoursesHomePage';
                   currentPage="edit" currentId={props.match.params.id} />)}
                 />
             </div>
-          </Router>       
+          </Router> 
+    
+      
   );
   }
 
